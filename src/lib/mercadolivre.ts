@@ -1,4 +1,5 @@
 import { MLSearchResponse, MLAffiliateLinkResponse, SearchFilters } from "@/types";
+import { getValidAccessToken } from "@/lib/ml-auth";
 
 const MLB_BASE = "https://api.mercadolibre.com";
 
@@ -26,7 +27,12 @@ export async function searchML(filters: SearchFilters): Promise<MLSearchResponse
 export async function createAffiliateLink(itemId: string, affiliateId: string): Promise<string> {
   const appId = process.env.ML_APP_ID;
   const secret = process.env.ML_SECRET;
-  const accessToken = process.env.ML_ACCESS_TOKEN;
+  let accessToken = await getValidAccessToken();
+  const staticToken = process.env.ML_ACCESS_TOKEN;
+
+  if (!accessToken && staticToken) {
+    accessToken = staticToken;
+  }
 
   if (!appId || !secret || !accessToken) {
     throw new Error("ML credentials missing. Configure .env.local.");

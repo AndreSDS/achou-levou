@@ -80,3 +80,18 @@ export interface ScoredItem extends MLItem {
 export interface AppConfig {
   mlAffiliateId: string;
 }
+
+export interface MLTokens {
+  access_token: string;
+  refresh_token: string;
+  expires_in: number;
+  obtained_at: number;
+  scope?: string;
+  user_id?: string;
+}
+
+export interface MLAuthState {
+  state: string;
+  code_verifier: string;
+  expires_at: number;
+}

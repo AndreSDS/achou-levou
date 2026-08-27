@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { AppConfig } from "@/types";
 import { getConfig, saveConfig } from "@/lib/storage";
 
 export default function ConfigPage() {
+  const router = useRouter();
   const [config, setConfig] = useState<AppConfig>(() => getConfig());
   const [saved, setSaved] = useState(false);
 
@@ -44,6 +46,19 @@ export default function ConfigPage() {
       </div>
 
       <div className="bg-white rounded-lg shadow p-6 mt-6">
+        <h3 className="text-lg font-semibold mb-4">Autenticação Mercado Livre</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          Gerencie a conexão OAuth com sua conta Mercado Livre na página dedicada.
+        </p>
+        <button
+          onClick={() => router.push("/auth")}
+          className="bg-gray-900 text-white font-medium py-2 px-6 rounded hover:bg-gray-800 transition"
+        >
+          Abrir autenticação
+        </button>
+      </div>
+
+      <div className="bg-white rounded-lg shadow p-6 mt-6">
         <h3 className="text-lg font-semibold mb-4">Variáveis de ambiente (servidor)</h3>
         <p className="text-sm text-gray-600 mb-2">
           As credenciais abaixo devem ser configuradas no arquivo <code>.env.local</code> na raiz do projeto.
@@ -51,7 +66,8 @@ export default function ConfigPage() {
         <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li><code>ML_APP_ID</code></li>
           <li><code>ML_SECRET</code></li>
-          <li><code>ML_ACCESS_TOKEN</code></li>
+          <li><code>ML_ACCESS_TOKEN</code> (fallback caso OAuth não esteja configurado)</li>
+          <li><code>ML_REDIRECT_URI</code></li>
         </ul>
       </div>
     </div>
