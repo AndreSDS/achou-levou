@@ -1,0 +1,117 @@
+{
+  "version": 2,
+  "skills": {
+    "tlc-spec-driven": {
+      "name": "tlc-spec-driven",
+      "source": "local",
+      "contentHash": "9f4c793556001f3210a2d9fe3b41bf24e82e581c522d8dd50f65addfee169a29",
+      "installedAt": "2026-08-27T15:23:45.637Z",
+      "updatedAt": "2026-08-27T15:23:45.727Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "frontend-blueprint": {
+      "name": "frontend-blueprint",
+      "source": "local",
+      "contentHash": "c79c5acbf69e88e1b0c848e64afb671f33091e32b6dcb1b2e6f9c78213a10ec3",
+      "installedAt": "2026-08-27T15:28:16.162Z",
+      "updatedAt": "2026-08-27T15:28:16.574Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "react-composition-patterns": {
+      "name": "react-composition-patterns",
+      "source": "local",
+      "contentHash": "171c6a35a0a74a6b37facf2a6e3883a02f53e3f2d429e6aa5834412c65d38dc7",
+      "installedAt": "2026-08-27T15:28:27.869Z",
+      "updatedAt": "2026-08-27T15:28:27.929Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "frontend-design": {
+      "name": "frontend-design",
+      "source": "local",
+      "contentHash": "b20162c8d6bcdd9137c4afceaeb4f9dce2c1ba3ccb57a96a3228b8cb33104ec4",
+      "installedAt": "2026-08-27T15:28:42.223Z",
+      "updatedAt": "2026-08-27T15:28:42.268Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "core-web-vitals": {
+      "name": "core-web-vitals",
+      "source": "local",
+      "contentHash": "3a67190e1dea1f2573d4fbb17071bbdac5ff4fd087d8cb5271094851c2acd559",
+      "installedAt": "2026-08-27T15:29:26.435Z",
+      "updatedAt": "2026-08-27T15:29:26.466Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "best-practices": {
+      "name": "best-practices",
+      "source": "local",
+      "contentHash": "e22b6d3e9c7d29cc5f92a89a1a393aa2686aa5c0cd70b7159a7fc9a2bc779461",
+      "installedAt": "2026-08-27T15:29:42.606Z",
+      "updatedAt": "2026-08-27T15:29:42.648Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "react-best-practices": {
+      "name": "react-best-practices",
+      "source": "local",
+      "contentHash": "e96f99e13dc2acc75efc1793aee08fe244802a97a4e190af38bd5a871a5c9636",
+      "installedAt": "2026-08-27T15:29:52.069Z",
+      "updatedAt": "2026-08-27T15:29:52.265Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    },
+    "web-quality-audit": {
+      "name": "web-quality-audit",
+      "source": "local",
+      "contentHash": "8af5bd3453984bdcef903709b6ef0606b12ae1badb6dd5b5b382b930d2594d7c",
+      "installedAt": "2026-08-27T15:30:01.660Z",
+      "updatedAt": "2026-08-27T15:30:01.690Z",
+      "agents": [
+        "cursor",
+        "claude-code",
+        "windsurf"
+      ],
+      "method": "copy",
+      "global": false
+    }
+  }
+}

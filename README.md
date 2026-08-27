@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Radar de Achados
 
-## Getting Started
+App web para descobrir produtos do Mercado Livre, ranquear os melhores achados, gerar posts prontos (a partir dos 10 modelos do `pens.txt`) e disponibilizá-los para copiar/colar no Canal do WhatsApp.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4
+- Sem banco de dados (estado em `localStorage`)
+
+## Setup
+
+```bash
+npm install
+cp .env.local.example .env.local
+```
+
+Configure as credenciais do Mercado Livre em `.env.local`:
+
+- `ML_APP_ID`
+- `ML_SECRET`
+- `ML_ACCESS_TOKEN`
+- `ML_AFFILIATE_ID`
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx, globals.css
+│   ├── page.tsx              # Dashboard
+│   ├── busca/page.tsx        # Busca de produtos
+│   ├── post/page.tsx         # Gerador de posts
+│   ├── historico/page.tsx    # Histórico
+│   ├── config/page.tsx       # Configurações
+│   └── api/ml/
+│       ├── search/route.ts   # Proxy busca ML
+│       └── link/route.ts     # Gera link de afiliado
+├── components/
+│   ├── ProductCard.tsx, Filters.tsx
+│   ├── ScoreBadge.tsx, CategoryPicker.tsx, TemplatePicker.tsx
+│   ├── PostPreview.tsx, RoutineTimeline.tsx
+├── lib/
+│   ├── mercadolivre.ts, scoring.ts
+│   ├── templates.ts, categories.ts
+│   ├── postBuilder.ts, storage.ts
+└── types/index.ts
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — servidor de desenvolvimento
+- `npm run build` — build de produção
+- `npm run lint` — lint
